@@ -2,9 +2,6 @@ const jokeEl = document.getElementById("joke");
 const jokeBtn = document.getElementById("joke-btn");
 
 // Functions
-const generateJoke = () => {
-const jokeEl = document.getElementById("joke");
-const jokeBtn = document.getElementById("joke-btn");
 
 const generateJoke = async () => {
   try {
