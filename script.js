@@ -23,5 +23,9 @@ document.addEventListener("DOMContentLoaded", generateJoke);
 };
 
 // Event handelers
+function init() {
 jokeBtn.addEventListener("click", generateJoke);
 document.addEventListener("DOMContentLoaded", generateJoke);
+};
+
+init();
