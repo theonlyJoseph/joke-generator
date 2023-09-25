@@ -6,11 +6,19 @@ const generateJoke = () => {
 const jokeEl = document.getElementById("joke");
 const jokeBtn = document.getElementById("joke-btn");
 
-const generateJoke = () => {
-  fetch("https://api.chucknorris.io/jokes/random")
-    .then((response) => response.json())
-    .then((data) => (jokeEl.innerHTML = data.value))
-    .catch((error) => error.json());
+const generateJoke = async () => {
+  try {
+  const response = await fetch("https://api.chucknorris.io/jokes/random");
+    if(!response.ok) {
+      throw new Error(response.message);
+    }
+  const data = response.json();
+  jokeEl.innerHTML = data.value;
+    
+  } catch (error) {
+    console.log(error)
+    jokeEl.innerHtml = `Something isn't right!`;
+  };
 };
 
 jokeBtn.addEventListener("click", generateJoke);
